@@ -42,7 +42,8 @@ require_once __DIR__ . '/../includes/DbConnect.php';
 
 include 'funciones/calculadora.php';
 include 'funciones/sensores.php';
-
+include 'funciones/catalogo.php';
+include 'funciones/invernadero.php';
 
 // Run app
 $app->run();

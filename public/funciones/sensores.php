@@ -8,7 +8,7 @@ function funciongetSensoreData($request){
     $objSensor= new Sensores();
     return $objSensor->getSensorData($request);
 }
-//eliminar
+/*//eliminar
 function funcionEliminarsensores($request){
     $objSensor= new Sensores();
     return $objSensor->eliminarSensor($request);
@@ -18,4 +18,4 @@ function funcionEliminarsensores($request){
 function funcionActualizarsensores($request){
     $objSensor= new Sensores();
     return $objSensor->actualizarSensor($request);
-}
+}*/

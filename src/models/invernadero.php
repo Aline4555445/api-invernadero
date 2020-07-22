@@ -1,5 +1,5 @@
 <?php
-class Sensores
+class Invernadero
 {
   private $con;
 
@@ -14,7 +14,7 @@ class Sensores
     $this->con = null;
   }
 
-  public function insertarSensor($request)
+  /*public function insertarSensor($request)
   {
     $req = json_decode($request->getbody());
 
@@ -32,16 +32,16 @@ class Sensores
       }
 
     return json_encode($response);
-  }
-  public function getSensorData($request)
+  }*/
+  public function getInvernaderoData($request)
   {
     $req = json_decode($request->getbody());
 
-    $sql = "SELECT * FROM catalogo WHERE id_planta=:id_planta";
+    $sql = "SELECT * FROM invernadero WHERE id_invernadero=:id_invernadero";
     $response=new stdClass();
       try {
         $statement = $this->con->prepare($sql);
-        $statement->bindparam("id_planta", $req->id_planta);      
+        $statement->bindparam("id_invernadero", $req->id_invernadero);      
         $statement->execute();        
         $response->result=$statement->fetchall(PDO::FETCH_OBJ);
       } catch (Exception $e) {
@@ -50,7 +50,7 @@ class Sensores
 
     return json_encode($response);
   }
-  public function eliminarSensor($request)
+  /*public function eliminarSensor($request)
   {
     $req = json_decode($request->getbody());
      $sql = "DELETE FROM ejemplo WHERE id=:id";
@@ -84,5 +84,5 @@ class Sensores
       }
 
     return json_encode($response);
-  }
+  }*/
 }

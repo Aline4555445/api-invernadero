@@ -24,10 +24,9 @@ $app->group('/api', function () use ($app) {
 
     $app->post('/sensores','funcionsensores');
     $app->get('/sensores','funciongetSensoreData');
-    $app->delete('/sensores','funcionEliminarSensores');
-    $app->patch('/sensores','funcionActualizarSensores');
-    $app->get('/busqueda_planta','funciongetSensoreData');
-    $app->get('/busqueda_invernadero','funciongetSensoreData');
+
+    $app->get('/catalogo','funciongetCatalogoData');
+    $app->get('/invernadero','funciongetInvernaderoData');
 });
 
 
