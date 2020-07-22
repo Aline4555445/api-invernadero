@@ -37,11 +37,11 @@ class Sensores
   {
     $req = json_decode($request->getbody());
 
-    $sql = "SELECT * FROM catalogo WHERE id_planta=:id_planta";
+    $sql = "SELECT * FROM invernadero WHERE id_invernadero=:id_invernadero";
     $response=new stdClass();
       try {
         $statement = $this->con->prepare($sql);
-        $statement->bindparam("id_planta", $req->id_planta);      
+        $statement->bindparam("id_invernadero", $req->id_invernadero);      
         $statement->execute();        
         $response->result=$statement->fetchall(PDO::FETCH_OBJ);
       } catch (Exception $e) {
