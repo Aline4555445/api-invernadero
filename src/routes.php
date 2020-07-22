@@ -31,6 +31,9 @@ $app->group('/api', function () use ($app) {
     $app->post('/sensor','funcionsen');
     $app->get('/sensor','funcionGetSensorData');
     $app->delete('/sensor','funcionEliminaSensor');
+
+    $app->post('/informe','funcioninforme');
+    $app->get('/informe','funciongetinformeData'); 
     
 });
 

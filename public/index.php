@@ -45,6 +45,7 @@ include 'funciones/sensores.php';
 include 'funciones/catalogo.php';
 include 'funciones/invernadero.php';
 include 'funciones/sensor.php';
+include 'funciones/informe.php';
 
 // Run app
 $app->run();
