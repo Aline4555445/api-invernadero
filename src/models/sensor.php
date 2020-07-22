@@ -1,5 +1,5 @@
 <?php
-class Catalogo
+class sensor
 {
   private $con;
 
@@ -13,16 +13,17 @@ class Catalogo
   {
     $this->con = null;
   }
-/*public function insertarCat($request)
+
+  public function insertarSen($request)
   {
     $req = json_decode($request->getbody());
 
-    $sql = "INSERT INTO ejemplo(sensor,valor) VALUES(:sensor,:valor)";
+    $sql = "INSERT INTO sensor(id_sensor,id_invernadero) VALUES(:id_sensor,:id_invernadero)";
     $response=new stdClass();
       try {
         $statement = $this->con->prepare($sql);
-        $statement->bindparam("sensor", $req->sensor);
-        $statement->bindparam("valor", $req->valor);
+        $statement->bindparam("id_sensor", $req->id_sensor);
+        $statement->bindparam("id_invernadero", $req->id_invernadero);
         $statement->execute();
 
         $response=$req;
@@ -31,16 +32,16 @@ class Catalogo
       }
 
     return json_encode($response);
-  }*/
-  public function getCatalogoData($request)
+  }
+  public function getSenData($request)
   {
     $req = json_decode($request->getbody());
 
-    $sql = "SELECT * FROM catalogo WHERE id_planta=:id_planta";
+    $sql = "SELECT * FROM sensor WHERE id_sensor=:id_sensor";
     $response=new stdClass();
       try {
         $statement = $this->con->prepare($sql);
-        $statement->bindparam("id_planta", $req->id_planta);      
+        $statement->bindparam("id_sensor", $req->id_sensor);      
         $statement->execute();        
         $response->result=$statement->fetchall(PDO::FETCH_OBJ);
       } catch (Exception $e) {
@@ -49,27 +50,27 @@ class Catalogo
 
     return json_encode($response);
   }
- /* public function eliminarSensor($request)
+  public function eliminarSen($request)
   {
     $req = json_decode($request->getbody());
-     $sql = "DELETE FROM ejemplo WHERE id=:id";
+     $sql = "DELETE FROM sensor WHERE id_sensor=:id_sensor";
     $response=new stdClass();
       try {
         $statement = $this->con->prepare($sql);
-        $statement->bindparam("id", $req->id);
+        $statement->bindparam("id_sensor", $req->id_sensor);
         $statement->execute();
-        $response=$result=" El registro con el  id: $req->id  se logro borrar";
+        $response=$result=" El registro con el  id: $req->id_sensor  se logro borrar";
       } catch (Exception $e) {
         $response->mensaje = $e->getMessage();
       }
 
     return json_encode($response);
   }
- public function actualizarSensor($request)
+/* public function actualizarSen($request)
   {
     $req = json_decode($request->getbody());
 
-    $sql = "UPDATE ejemplo SET sensor=:sensor,valor=:valor WHERE id=:id";
+    $sql = "UPDATE sensor SET =:sensor,valor=:valor WHERE id=:id";
     $response=new stdClass();
       try {
         $statement = $this->con->prepare($sql);
@@ -83,9 +84,5 @@ class Catalogo
       }
 
     return json_encode($response);
-  }
-
-
-
-*/
+  }*/
 }

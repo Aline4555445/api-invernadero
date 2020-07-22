@@ -27,6 +27,11 @@ $app->group('/api', function () use ($app) {
 
     $app->get('/catalogo','funciongetCatalogoData');
     $app->get('/invernadero','funciongetInvernaderoData');
+
+    $app->post('/sensor','funcionsen');
+    $app->get('/sensor','funcionGetSensorData');
+    $app->delete('/sensor','funcionEliminaSensor');
+    
 });
 
 
