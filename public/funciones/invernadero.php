@@ -1,9 +1,9 @@
 <?
 require __DIR__ . '/../../src/models/invernadero.php';
-/*function funcionCat($request){
-    $objCat= new Catalogo();
-    return $objSensor->insertarCatalogo($request);
-}*/
+function funcioninv($request){
+    $objinvernadero= new Invernadero();
+    return $objinvernadero->insertarInvernadero($request);
+}
 function funciongetInvernaderoData($request){
     $objInvernadero= new Invernadero();
     return $objInvernadero->getInvernaderoData($request);
