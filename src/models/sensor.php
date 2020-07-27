@@ -18,15 +18,14 @@ class sensor
   {
     $req = json_decode($request->getbody());
 
-    $sql = "INSERT INTO sensor(id_sensor,id_invernadero) VALUES(:id_sensor,:id_invernadero)";
+    $sql = "INSERT INTO sensor(id_invernadero) VALUES(:id_invernadero)";
     $response=new stdClass();
       try {
         $statement = $this->con->prepare($sql);
-        $statement->bindparam("id_sensor", $req->id_sensor);
         $statement->bindparam("id_invernadero", $req->id_invernadero);
         $statement->execute();
 
-        $response=$req;
+        $response->mensaje =$req;
       } catch (Exception $e) {
         $response->mensaje = $e->getMessage();
       }
