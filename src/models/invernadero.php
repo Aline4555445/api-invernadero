@@ -41,7 +41,8 @@ class Invernadero
     $response=new stdClass();
       try {
         $statement = $this->con->prepare($sql);
-        $statement->bindparam("id_invernadero", $req->id_invernadero);      
+        $statement->bindparam("id_invernadero", $req->id_invernadero);
+        $statement->bindparam("id_planta", $req->id_invernadero);      
         $statement->execute();        
         $response->result=$statement->fetchall(PDO::FETCH_OBJ);
       } catch (Exception $e) {
