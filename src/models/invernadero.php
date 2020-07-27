@@ -26,7 +26,7 @@ class Invernadero
         $statement->bindparam("id_planta", $req->id_planta);
         $statement->execute();
 
-        $response=$req;
+        $response->mensaje = $req;
       } catch (Exception $e) {
         $response->mensaje = $e->getMessage();
       }
