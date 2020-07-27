@@ -14,16 +14,16 @@ class Invernadero
     $this->con = null;
   }
 
-  /*public function insertarSensor($request)
+  public function insertarInvernadero($request)
   {
     $req = json_decode($request->getbody());
 
-    $sql = "INSERT INTO ejemplo(sensor,valor) VALUES(:sensor,:valor)";
+    $sql = "INSERT INTO invernadero(id_planta) VALUES(:id_planta)";
     $response=new stdClass();
       try {
         $statement = $this->con->prepare($sql);
-        $statement->bindparam("sensor", $req->sensor);
-        $statement->bindparam("valor", $req->valor);
+        #$statement->bindparam("id_invernadero", $req->id_invernadero);
+        $statement->bindparam("id_planta", $req->id_planta);
         $statement->execute();
 
         $response=$req;
@@ -32,7 +32,7 @@ class Invernadero
       }
 
     return json_encode($response);
-  }*/
+  }
   public function getInvernaderoData($request)
   {
     $req = json_decode($request->getbody());

@@ -27,6 +27,7 @@ $app->group('/api', function () use ($app) {
 
     $app->get('/catalogo','funciongetCatalogoData');
     $app->get('/invernadero','funciongetInvernaderoData');
+    $app->post('/invernadero','funcioninsertarInvernadero'); 
 
     $app->post('/sensor','funcionsen');
     $app->get('/sensor','funcionGetSensorData');
@@ -34,6 +35,8 @@ $app->group('/api', function () use ($app) {
 
     $app->post('/informe','funcioninforme');
     $app->get('/informe','funciongetinformeData'); 
+
+    
     
 });
 
