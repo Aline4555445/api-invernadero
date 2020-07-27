@@ -31,7 +31,7 @@ class informe
 
         $statement->execute();
 
-        $response=$req;
+        $response->mensaje =$req;
       } catch (Exception $e) {
         $response->mensaje = $e->getMessage();
       }
