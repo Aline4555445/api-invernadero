@@ -37,13 +37,15 @@ class Invernadero
   {
     $req = json_decode($request->getbody());
 
-    $sql = "SELECT * FROM invernadero WHERE id_invernadero=:id_invernadero";
+    $sql = "SELECT * FROM invernadero "; #WHERE id_invernadero=:id_invernadero";
     $response=new stdClass();
       try {
         $statement = $this->con->prepare($sql);
-        $statement->bindparam("id_invernadero", $req->id_invernadero);
-        $statement->bindparam("id_planta", $req->id_invernadero);      
-        $statement->execute();        
+        #$statement->bindparam("id_invernadero", $req->id_invernadero);
+        #$statement->bindparam("id_planta", $req->id_invernadero);
+        $statement = $this->con->prepare($sql);      
+        $statement->execute();
+        #$response->Nombre-$req->id_planta;        
         $response->result=$statement->fetchall(PDO::FETCH_OBJ);
       } catch (Exception $e) {
         $response->mensaje = $e->getMessage();

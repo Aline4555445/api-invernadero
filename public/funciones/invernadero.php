@@ -2,7 +2,7 @@
 require __DIR__ . '/../../src/models/invernadero.php';
 function funcioninv($request){
     $objinvernadero= new Invernadero();
-    return $objinvernadero->insertarInvernadero($request);
+    return $objinvernadero->inv($request);
 }
 function funciongetInvernaderoData($request){
     $objInvernadero= new Invernadero();
